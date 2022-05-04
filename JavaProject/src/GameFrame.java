@@ -8,10 +8,12 @@ public class GameFrame extends JFrame {
 	int f_width; // frame size
 	int f_height;
 	
+	GameManager gameManager;
 	Toolkit tk = Toolkit.getDefaultToolkit(); // get info. from local platform
 	
-	GameFrame() { // constructor
+	GameFrame(GameManager gameManager) { // constructor
 		init();
+		this.gameManager = gameManager;
 		
 		setTitle("Ground Conquer");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
