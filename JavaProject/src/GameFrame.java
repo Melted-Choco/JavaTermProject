@@ -1,5 +1,6 @@
 import java.awt.Dimension;
 import java.awt.Toolkit;
+import java.awt.*;
 import javax.swing.JFrame;
 
 public class GameFrame extends JFrame {
@@ -18,6 +19,7 @@ public class GameFrame extends JFrame {
 		setTitle("Ground Conquer");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setSize(f_width, f_height);
+		getContentPane().setBackground(Color.cyan);
 		
 		Dimension screen = tk.getScreenSize(); // get screen size of local platform
 		f_pos_x = (int)(screen.getWidth() / 2 - f_width / 2); // set position of game frame 
