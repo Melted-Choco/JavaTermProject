@@ -1,7 +1,8 @@
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.awt.*;
-import javax.swing.JFrame;
+import java.awt.event.*;
+import javax.swing.*;
 
 public class GameFrame extends JFrame {
 	int f_pos_x; // frame position
@@ -13,13 +14,16 @@ public class GameFrame extends JFrame {
 	Toolkit tk = Toolkit.getDefaultToolkit(); // get info. from local platform
 	
 	GameFrame(GameManager gameManager) { // constructor
-		init();
-		this.gameManager = gameManager;
-		
+		init(gameManager);
+		mainFrame();
+		setPanel();
+	}
+	
+	public void mainFrame() {
 		setTitle("Ground Conquer");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setSize(f_width, f_height);
-		getContentPane().setBackground(Color.cyan);
+		getContentPane().setBackground(Color.black);
 		
 		Dimension screen = tk.getScreenSize(); // get screen size of local platform
 		f_pos_x = (int)(screen.getWidth() / 2 - f_width / 2); // set position of game frame 
@@ -30,8 +34,20 @@ public class GameFrame extends JFrame {
 		setVisible(true);
 	}
 	
-	public void init() { // initialize
+	public void setPanel() {
+		
+	}
+	
+	public void init(GameManager gameManager) { // initialize
+		this.gameManager = gameManager;		
 		f_width = 800;
 		f_height = 600;
+	}
+	
+	class ButtonClickListener implements ActionListener {
+		public void actionPerformed(ActionEvent e) {
+			String command = e.getActionCommand();
+			
+		}
 	}
 }
