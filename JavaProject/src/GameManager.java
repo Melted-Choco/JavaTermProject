@@ -1,5 +1,7 @@
 
 public class GameManager {
+	int score;
+	
 	GameFrame gameFrame;
 	
 	GameManager() {
